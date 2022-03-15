@@ -42,4 +42,9 @@ public class InMemoryRepository<T extends BaseEntity, U> implements Repository<T
     public Optional<T> buscar(Long id) {
         return Optional.ofNullable(elementos.get(id));
     }
+
+    @Override
+    public List<T> extrairTodos() {
+        return new ArrayList<>(elementos.values());
+    }
 }
