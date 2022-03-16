@@ -14,7 +14,7 @@ public class InMemoryRepository<T extends BaseEntity, U> implements Repository<T
     }
 
     @Override
-    public void adicionar(T elemento) {
+    public void adicionar(final T elemento) {
         elemento.setId(availablePrimaryKey);
         elementos.put(availablePrimaryKey, elemento);
         availablePrimaryKey++;
@@ -27,7 +27,7 @@ public class InMemoryRepository<T extends BaseEntity, U> implements Repository<T
     }
 
     @Override
-    public void atualizar(Long id, T elementoAtualizado) {
+    public void atualizar(Long id, final T elementoAtualizado) {
         Optional<T> optionalElemento = buscar(id);
 
         if (optionalElemento.isEmpty()) {

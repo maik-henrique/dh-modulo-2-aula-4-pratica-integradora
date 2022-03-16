@@ -1,12 +1,12 @@
 package br.com.meli.entity;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 @Builder
 @Data
 @ToString(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cliente extends BaseEntity {
 
     private String nome;
